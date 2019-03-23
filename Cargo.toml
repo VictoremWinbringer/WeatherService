@@ -5,3 +5,5 @@ authors = ["VictoremWinbringer <victor@mail.ru>"]
 edition = "2018"
 
 [dependencies]
+actix-web = "0.7.18"
+hyper = "0.12.25"
