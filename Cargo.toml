@@ -1,9 +1,9 @@
 [package]
-name = "WeatherService"
+name = "weather_service"
 version = "0.1.0"
 authors = ["VictoremWinbringer <victor@mail.ru>"]
 edition = "2018"
 
 [dependencies]
 actix-web = "0.7.18"
-hyper = "0.12.25"
+reqwest = "0.9.12"
