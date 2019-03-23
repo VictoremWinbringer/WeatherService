@@ -7,7 +7,7 @@ extern crate reqwest;
 use actix_web::{http, server, App, Path, Responder, HttpRequest, HttpResponse};
 use actix_web::dev::Handler;
 
-
+mod entities;
 mod adapters;
 
 fn weather(info: Path<(String, String)>) -> impl Responder {

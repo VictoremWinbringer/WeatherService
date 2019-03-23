@@ -1,4 +1,5 @@
 use serde_json::Value;
+use crate::entities::Exception;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct City {
@@ -37,21 +38,21 @@ pub struct TemperatureValue {
 const API_KEY: &'static str = "C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV";
 const API_ROOT: &'static str = "http://dataservice.accuweather.com";
 
-pub fn city(name: &str) -> Result<Vec<City>, Box<std::error::Error>> {
+pub fn city(name: &str) -> Result<Vec<City>, Exception> {
     let path = &format!("{}/locations/v1/cities/search?apikey={}&q={}", API_ROOT, API_KEY, name);
     let result: Vec<City> = reqwest::get(path)?
         .json()?;
     Ok(result)
 }
 
-pub fn dayly_1day(city_id: &str) -> Result<Forecast, Box<std::error::Error>> {
+pub fn dayly_1day(city_id: &str) -> Result<Forecast, Exception> {
     let path = &format!("{}/forecasts/v1/daily/1day/{}?apikey={}&metric=true", API_ROOT, city_id, API_KEY);
     let result: Forecast = reqwest::get(path)?
         .json()?;
     Ok(result)
 }
 
-pub fn dayly_5day(city_id: &str) -> Result<Forecast, Box<std::error::Error>> {
+pub fn dayly_5day(city_id: &str) -> Result<Forecast, Exception> {
     let path = &format!("{}/forecasts/v1/daily/5day/{}?apikey={}&metric=true", API_ROOT, city_id, API_KEY);
     let result: Forecast = reqwest::get(path)?
         .json()?;
@@ -61,9 +62,10 @@ pub fn dayly_5day(city_id: &str) -> Result<Forecast, Box<std::error::Error>> {
 #[cfg(test)]
 mod accu_weather_test {
     use crate::adapters::accu_weather;
+    use crate::entities::Exception;
 
     #[test]
-    fn test_weather_1day_for_moscow() -> Result<(), Box<std::error::Error>> {
+    fn test_weather_1day_for_moscow() -> Result<(), Exception> {
         let cities = accu_weather::city("Moscow")?;
         assert!(cities.len() > 0, "{:?}", cities);
         let dayli = accu_weather::dayly_1day(&cities.first().unwrap().key)?;
@@ -72,7 +74,7 @@ mod accu_weather_test {
     }
 
     #[test]
-    fn test_weather_5day_for_moscow() -> Result<(), Box<std::error::Error>> {
+    fn test_weather_5day_for_moscow() -> Result<(), Exception> {
         let cities = accu_weather::city("Moscow")?;
         assert!(cities.len() > 0, "{:?}", cities);
         let dayli = accu_weather::dayly_5day(&cities.first().unwrap().key)?;
