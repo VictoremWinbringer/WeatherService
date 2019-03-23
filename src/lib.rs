@@ -1,6 +1,14 @@
 extern crate actix_web;
+#[macro_use]
+extern crate serde_derive;
+extern crate serde_json;
+extern crate reqwest;
+
 use actix_web::{http, server, App, Path, Responder, HttpRequest, HttpResponse};
 use actix_web::dev::Handler;
+
+
+mod adapters;
 
 fn weather(info: Path<(String, String)>) -> impl Responder {
 
