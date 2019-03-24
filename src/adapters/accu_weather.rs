@@ -1,4 +1,3 @@
-
 use crate::entities::Exception;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -38,7 +37,7 @@ pub struct TemperatureValue {
 const API_KEY: &'static str = "C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV";
 const API_ROOT: &'static str = "http://dataservice.accuweather.com";
 
-pub fn city(name: &str, country_code:&str) -> Result<Vec<City>, Exception> {
+pub fn city(name: &str, country_code: &str) -> Result<Vec<City>, Exception> {
     let path = &format!("{}/locations/v1/cities/search?apikey={}&q={},{}", API_ROOT, API_KEY, name, country_code);
     let result: Vec<City> = reqwest::get(path)?
         .json()?;
@@ -47,16 +46,12 @@ pub fn city(name: &str, country_code:&str) -> Result<Vec<City>, Exception> {
 
 pub fn dayly_1day(city_id: &str) -> Result<Forecast, Exception> {
     let path = &format!("{}/forecasts/v1/daily/1day/{}?apikey={}&metric=true", API_ROOT, city_id, API_KEY);
-    let result: Forecast = reqwest::get(path)?
-        .json()?;
-    Ok(result)
+    super::try_parse(reqwest::get(path)?)
 }
 
 pub fn dayly_5day(city_id: &str) -> Result<Forecast, Exception> {
     let path = &format!("{}/forecasts/v1/daily/5day/{}?apikey={}&metric=true", API_ROOT, city_id, API_KEY);
-    let result: Forecast = reqwest::get(path)?
-        .json()?;
-    Ok(result)
+    super::try_parse(reqwest::get(path)?)
 }
 
 #[cfg(test)]

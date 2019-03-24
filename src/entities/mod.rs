@@ -5,7 +5,8 @@ use core::fmt::Display;
 pub enum Exception {
     AccuWeatherCityNotFound(String),
     AccuWeatherForecastNotFound(String),
-    RequestError(reqwest::Error)
+    RequestError(reqwest::Error),
+    ErrorMessage(String),
 }
 
 impl std::error::Error for Exception {
@@ -17,6 +18,7 @@ impl std::fmt::Display for Exception {
         match self {
             Exception::AccuWeatherCityNotFound( city ) => write!(f,"Wether forecast not found for city: {}", city),
             Exception::AccuWeatherForecastNotFound( city_id ) => write!(f,"Wether forecast not found for city with id: {}", city_id),
+            Exception::ErrorMessage( message ) => write!(f,"Error: {}", message),
             Exception::RequestError(err) => err.fmt(f),
             _ => write!(f, "{:#?}", self),
         }
