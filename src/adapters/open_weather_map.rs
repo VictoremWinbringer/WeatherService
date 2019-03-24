@@ -3,7 +3,7 @@ use reqwest::Response;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Forecast {
-    list: Vec<Weather>
+    pub  list: Vec<Weather>
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -14,7 +14,7 @@ pub struct Weather {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct TemperatureInfo {
-    temp: f32
+    pub temp: f32
 }
 
 const API_ROOT: &'static str = "http://api.openweathermap.org/data/2.5";
