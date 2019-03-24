@@ -1,4 +1,4 @@
-use serde_json::Value;
+
 use crate::entities::Exception;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -38,8 +38,8 @@ pub struct TemperatureValue {
 const API_KEY: &'static str = "C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV";
 const API_ROOT: &'static str = "http://dataservice.accuweather.com";
 
-pub fn city(name: &str) -> Result<Vec<City>, Exception> {
-    let path = &format!("{}/locations/v1/cities/search?apikey={}&q={}", API_ROOT, API_KEY, name);
+pub fn city(name: &str, country_code:&str) -> Result<Vec<City>, Exception> {
+    let path = &format!("{}/locations/v1/cities/search?apikey={}&q={},{}", API_ROOT, API_KEY, name, country_code);
     let result: Vec<City> = reqwest::get(path)?
         .json()?;
     Ok(result)
@@ -66,7 +66,7 @@ mod accu_weather_test {
 
     #[test]
     fn test_weather_1day_for_moscow() -> Result<(), Exception> {
-        let cities = accu_weather::city("Moscow")?;
+        let cities = accu_weather::city("Moscow", "ru")?;
         assert!(cities.len() > 0, "{:?}", cities);
         let dayli = accu_weather::dayly_1day(&cities.first().unwrap().key)?;
         assert!(dayli.daily_forecasts.len() == 1, "{:?}", dayli);
@@ -75,7 +75,7 @@ mod accu_weather_test {
 
     #[test]
     fn test_weather_5day_for_moscow() -> Result<(), Exception> {
-        let cities = accu_weather::city("Moscow")?;
+        let cities = accu_weather::city("Moscow", "RU")?;
         assert!(cities.len() > 0, "{:?}", cities);
         let dayli = accu_weather::dayly_5day(&cities.first().unwrap().key)?;
         assert!(dayli.daily_forecasts.len() == 5, "{:?}", dayli);

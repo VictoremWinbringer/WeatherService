@@ -4,18 +4,18 @@ extern crate serde_derive;
 extern crate serde_json;
 extern crate reqwest;
 
-use actix_web::{http, server, App, Path, Responder, HttpRequest, HttpResponse};
-use actix_web::dev::Handler;
+use actix_web::{http, server, App, Path, Responder, HttpResponse};
 
 mod entities;
 mod adapters;
 
-fn weather(info: Path<(String, String)>) -> impl Responder {
+fn weather(info: Path<(String, String, String)>) -> impl Responder {
 
-    if info.0 == "Moscow" {
+    if info.1 == "Moscow" {
         HttpResponse::Ok()
             .content_type("text/html")
-            .body(format!("Weather in City: {}  for Period {}", info.0, info.1))
+            .header("Cache-Control","no-cache")
+            .body(format!("Weather in Country:{} City: {}  for Period {}", info.0, info.1, info.2))
     } else {
         HttpResponse::NotFound()
             .content_type("text/html")
@@ -27,7 +27,7 @@ pub fn run(addr: impl std::net::ToSocketAddrs){
     server::new(
         || App::new()
             .prefix("/api/v1")
-            .route("/weather/{city}/{period}", http::Method::GET, weather))
+            .route("/weather/{country_code}/{city}/{period}", http::Method::GET, weather))
         .bind(addr)
         .unwrap()
         .run()

@@ -1,14 +1,15 @@
 use reqwest;
 use weather_service;
 use std::thread;
+use actix_web::http::StatusCode;
 
 #[test]
 fn get_weather_today() -> Result<(), Box<std::error::Error>> {
     let _ = thread::spawn (||{
         weather_service::run("127.0.0.1:8080");
     });
-    let result = reqwest::get("http://127.0.0.1:8080/api/v1/weather/Moscow City/Today")?.text()?;
-    assert!(false, result);
+    let mut response = reqwest::get("http://127.0.0.1:8080/api/v1/weather/RU/Moscowww/1day")?;
+    assert!(response.status() == StatusCode::OK, "{}, {}", response.text()?, response.status());
     Ok(())
 }
 
@@ -17,8 +18,8 @@ fn get_weather_for_week() -> Result<(), Box<std::error::Error>> {
     let _ = thread::spawn (||{
         weather_service::run("127.0.0.1:8081");
     });
-    let result = reqwest::get("http://127.0.0.1:8081/api/v1/weather/Moscow/Week")?.text()?;
-    assert!(false, result);
+    let mut response = reqwest::get("http://127.0.0.1:8081/api/v1/weather/RU/Moscow/5day")?;
+    assert!(response.status() == StatusCode::OK, "{},{}", response.text()?, response.status());
     Ok(())
 }
 
