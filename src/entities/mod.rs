@@ -1,5 +1,4 @@
 use std::fmt::Formatter;
-use core::fmt::Display;
 
 #[derive(Debug)]
 pub enum Exception {
@@ -29,4 +28,8 @@ impl std::convert::From<reqwest::Error> for Exception {
     fn from(err: reqwest::Error) -> Self {
         Exception::RequestError(err)
     }
+}
+
+pub struct Weather {
+  pub temperature: f32,
 }

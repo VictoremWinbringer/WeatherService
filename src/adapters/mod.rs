@@ -1,15 +1,11 @@
-use std::fmt::{Error, Formatter};
+
 use crate::entities::Exception;
 use reqwest::Response;
 use serde::de::DeserializeOwned;
+use crate::entities::Weather;
 
 pub mod accu_weather;
 pub mod open_weather_map;
-
-pub struct Weather {
-    date: String,
-    temperature: f32,
-}
 
 trait IWeatherAdapter {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception>;
@@ -23,7 +19,7 @@ impl IWeatherAdapter for AccumaWeatherAdapter {
         let city_id = accu_weather::city(city, country_code)?.first().ok_or(Exception::AccuWeatherCityNotFound(city.to_owned()))?.key.clone();
         let forecast = accu_weather::dayly_1day(&city_id)?;
         let temp = forecast.daily_forecasts.first().ok_or(Exception::AccuWeatherForecastNotFound(city_id.to_owned()))?;
-        Ok(Weather { date: temp.date.clone(), temperature: (temp.temperature.max.value + temp.temperature.min.value) / 2.0 })
+        Ok(Weather { temperature: (temp.temperature.max.value + temp.temperature.min.value) / 2.0 })
     }
 
     fn daily_5day(&self, city: &str, country_code: &str) -> Result<Vec<Weather>, Exception> {
@@ -31,7 +27,7 @@ impl IWeatherAdapter for AccumaWeatherAdapter {
         let forecast = accu_weather::dayly_5day(&city_id)?;
         let temp = forecast.daily_forecasts
             .iter()
-            .map(|d| Weather { date: d.date.clone(), temperature: (d.temperature.max.value + d.temperature.min.value) / 2.0 })
+            .map(|d| Weather { temperature: (d.temperature.max.value + d.temperature.min.value) / 2.0 })
             .collect();
         Ok(temp)
     }
@@ -51,11 +47,27 @@ pub struct OpenWeatherMapAdapter;
 impl IWeatherAdapter for OpenWeatherMapAdapter {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception> {
         let forecast = open_weather_map::dayly_1day(city, country_code)?;
-        Ok(Weather { date: forecast.dt.into(), temperature: forecast.main.temp })
+        Ok(Weather { temperature: forecast.main.temp })
     }
 
     fn daily_5day(&self, city: &str, country_code: &str) -> Result<Vec<Weather>, Exception> {
-        let forecasts = open_weather_map::dayly_5day(city, country_code)?;
-        Ok(forecasts.list.iter().map(|f| Weather { date: forecast.dt.into(), temperature: forecast.main.temp }).into())
+        let mut i = 0;
+        let forecasts = open_weather_map::dayly_5day(city, country_code)?.list
+            .iter()
+            .map(|f| Weather { temperature: f.main.temp })
+            .fold(Vec::<Weather>::new(), |a, weather| {
+                let mut acc = a;
+                i += 1;
+                if i == 1 {
+                    acc.push(weather)
+                } else {
+                    acc.last_mut().map(|w| w.temperature = (w.temperature + weather.temperature) / 2.0);
+                }
+                if i % 8 == 0 {
+                    i = 0;
+                }
+                acc
+            });
+        Ok(forecasts)
     }
 }
