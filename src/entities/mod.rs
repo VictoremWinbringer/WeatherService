@@ -30,6 +30,7 @@ impl std::convert::From<reqwest::Error> for Exception {
     }
 }
 
+#[derive(Debug)]
 pub struct Weather {
   pub temperature: f32,
 }
