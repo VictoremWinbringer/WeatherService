@@ -8,7 +8,7 @@ pub trait IActixWebPort<T: IWeatherService> {
 }
 
 pub struct ActixWebPort<T: IWeatherService> {
-    service: T
+  pub  service: T
 }
 
 impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {

@@ -7,6 +7,10 @@ extern crate arrayvec;
 extern crate regex;
 
 use actix_web::{http, server, App, Path, Responder, HttpResponse};
+use crate::ports::{IActixWebPort, ActixWebPort};
+use std::rc::Rc;
+use crate::domain_logic::{WeatherService, IWeatherService};
+use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter};
 
 mod entities;
 mod adapters;
@@ -14,20 +18,19 @@ mod domain_logic;
 mod ports;
 
 fn weather(info: Path<(String, String, String)>) -> impl Responder {
-
-    if info.1 == "Moscow" {
-        HttpResponse::Ok()
-            .content_type("text/html")
-            .header("Cache-Control","no-cache")
-            .body(format!("Weather in Country:{} City: {}  for Period {}", info.0, info.1, info.2))
-    } else {
-        HttpResponse::NotFound()
-            .content_type("text/html")
-            .body(format!("Weather in City: {} Not found!", info.0))
-    }
+    let port = ActixWebPort {
+        service: WeatherService::new(
+            vec![
+                Box::new(AccumaWeatherAdapter),
+                Box::new(OpenWeatherMapAdapter),
+            ]
+        )
+    };
+    port.get_weather(&info.0, &info.1, &info.2)
 }
 
-pub fn run(addr: impl std::net::ToSocketAddrs){
+pub fn run(addr: impl std::net::ToSocketAddrs) {
+
     server::new(
         || App::new()
             .prefix("/api/v1")

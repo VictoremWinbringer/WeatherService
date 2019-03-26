@@ -15,7 +15,7 @@ pub struct WeatherService {
 }
 
 impl WeatherService {
-    fn new(
+   pub fn new(
         sources: Vec<Box<dyn IWeatherAdapter>>,
     ) -> WeatherService {
         WeatherService { sources }
