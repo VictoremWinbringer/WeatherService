@@ -5,12 +5,12 @@ use crate::adapters::{IWeatherAdapter, AccumaWeatherAdapter, OpenWeatherMapAdapt
 use crate::weather;
 use serde_json::error::ErrorCode::ExpectedColon;
 
-trait IWeatherService {
+pub trait IWeatherService {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception>;
     fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception>;
 }
 
-struct WeatherService {
+pub struct WeatherService {
     cache: Arc<Mutex<HashMap<String, Weather>>>,
     sources: Vec<Box<dyn IWeatherAdapter>>,
 }
