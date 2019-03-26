@@ -79,7 +79,7 @@ fn validate_city(city: &str) -> Result<(), Exception> {
 }
 
 fn validate_country_code(country_code: &str) -> Result<(), Exception> {
-    let rgx = regex::Regex::new("[a-zA-Z]{2}")?;
+    let rgx = regex::Regex::new("^[a-zA-Z]{2}$")?;
 
     if !rgx.is_match(country_code) {
         return Err(Exception::ErrorMessage(format!("Country code must by ISO 2 alphabet code like us or ru. Current code is {}!", country_code)));
