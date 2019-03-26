@@ -1,14 +1,15 @@
-use actix_web::{Responder, HttpResponse};
+use actix_web::{Responder, HttpResponse, HttpRequest, Path};
 use regex;
 use crate::entities::{Weather, Exception};
 use crate::domain_logic::IWeatherService;
+use actix_web::dev::Handler;
 
 pub trait IActixWebPort<T: IWeatherService> {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse;
 }
 
 pub struct ActixWebPort<T: IWeatherService> {
-  pub  service: T
+    pub  service: T
 }
 
 impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {

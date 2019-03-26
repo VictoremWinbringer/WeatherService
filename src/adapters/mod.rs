@@ -3,13 +3,15 @@ use reqwest::Response;
 use serde::de::DeserializeOwned;
 use crate::entities::Weather;
 use arrayvec::ArrayVec;
+use std::collections::HashMap;
+use std::time::{Instant, Duration};
 
 pub mod accu_weather;
 pub mod open_weather_map;
 
 pub trait IWeatherAdapter {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception>;
-    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather;5], Exception>;
+    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception>;
 }
 
 pub struct AccumaWeatherAdapter;
@@ -25,7 +27,7 @@ impl IWeatherAdapter for AccumaWeatherAdapter {
         Ok(Weather { temperature: (temp.temperature.max.value + temp.temperature.min.value) / 2.0 })
     }
 
-    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather;5], Exception> {
+    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception> {
         if city == "test_city" {
             let mut value: Vec<Weather> = Vec::new();
             for i in 1..6 {
@@ -45,8 +47,10 @@ impl IWeatherAdapter for AccumaWeatherAdapter {
 
 fn try_parse<T: DeserializeOwned>(mut response: Response) -> Result<T, Exception> {
     if response.status() == 200 {
-        let weather: T = response.json()?;
-        Ok(weather)
+        match response.json() {
+            Ok(weather) => Ok(weather),
+            _ => Err(Exception::ErrorMessage(response.text()?))
+        }
     } else {
         Err(Exception::ErrorMessage(response.text()?))
     }
@@ -63,7 +67,7 @@ impl IWeatherAdapter for OpenWeatherMapAdapter {
         Ok(Weather { temperature: forecast.main.temp })
     }
 
-    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather;5], Exception> {
+    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception> {
         if city == "test_city" {
             let mut value: Vec<Weather> = Vec::new();
             for i in 1..6 {
@@ -93,7 +97,50 @@ impl IWeatherAdapter for OpenWeatherMapAdapter {
 }
 
 pub fn from_vec(weathers: Vec<Weather>) -> [Weather; 5] {
-
     let array: ArrayVec<_> = weathers.into_iter().collect();
-     array.into_inner().unwrap()
+    array.into_inner().unwrap()
+}
+
+#[derive(Debug, Clone)]
+pub struct TtlWeather<T: Clone> {
+    weather: T,
+    expiration: Instant,
+}
+
+pub struct CacheAdapter<T: Clone> {
+    cache: HashMap<String, TtlWeather<T>>,
+    expiration: Duration,
+}
+
+impl<T> CacheAdapter<T> where T: Clone {
+    pub fn new(expiration: Duration) -> Self {
+        CacheAdapter { cache: HashMap::new(), expiration }
+    }
+
+    fn is_expired(&self, key: &str) -> bool {
+        self.cache
+            .get(key)
+            .map(|ttl| ttl.expiration > Instant::now()).unwrap_or(false)
+    }
+
+    fn get_key(&self, country: &str, city: &str, period: &str) -> String {
+        format!("/{}/{}/{}/", country, city, period)
+    }
+
+    pub fn clear_expired(&mut self) {
+        self.cache = self.cache.iter().filter(|(x, y)| y.expiration > Instant::now())
+            .map(|(x, y)| (x.to_owned(), y.clone()))
+            .collect();
+    }
+
+    pub fn add(&mut self, country: &str, city: &str, period: &str, value: T) {
+        let key = self.get_key(country, city, period);
+        let value = TtlWeather { weather: value, expiration: Instant::now() + self.expiration };
+        self.cache.insert(key, value);
+    }
+
+    pub fn get(&self, country: &str, city: &str, period: &str) -> Option<T> {
+        let key = self.get_key(country, city, period);
+        self.cache.get(&key).map(|x| x.clone().weather)
+    }
 }

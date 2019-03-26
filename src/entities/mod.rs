@@ -37,7 +37,7 @@ impl std::convert::From<regex::Error> for Exception {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Weather {
   pub temperature: f32,
 }

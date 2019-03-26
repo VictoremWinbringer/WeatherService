@@ -1,8 +1,7 @@
 use crate::entities::{Weather, Exception};
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex, RwLock};
 use std::collections::HashMap;
-use crate::adapters::{IWeatherAdapter, AccumaWeatherAdapter, OpenWeatherMapAdapter};
-use crate::weather;
+use crate::adapters::{IWeatherAdapter, AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter};
 use serde_json::error::ErrorCode::ExpectedColon;
 
 pub trait IWeatherService {
@@ -12,13 +11,31 @@ pub trait IWeatherService {
 
 pub struct WeatherService {
     sources: Vec<Box<dyn IWeatherAdapter>>,
+    cache_1day: Arc<RwLock<CacheAdapter<Weather>>>,
+    cache_5day: Arc<RwLock<CacheAdapter<[Weather; 5]>>>,
 }
 
 impl WeatherService {
-   pub fn new(
+    pub fn new(
         sources: Vec<Box<dyn IWeatherAdapter>>,
+        cache_1day: Arc<RwLock<CacheAdapter<Weather>>>,
+        cache_5day: Arc<RwLock<CacheAdapter<[Weather; 5]>>>,
     ) -> WeatherService {
-        WeatherService { sources }
+        WeatherService { sources, cache_1day, cache_5day }
+    }
+}
+
+enum Period {
+    For1Day,
+    For5Day,
+}
+
+impl From<Period> for &'static str {
+    fn from(period: Period) -> Self {
+        match period {
+            Period::For1Day => "1day",
+            Period::For5Day => "5day",
+        }
     }
 }
 
@@ -26,6 +43,10 @@ impl IWeatherService for WeatherService {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception> {
         validate_city(city)?;
         validate_country_code(country_code)?;
+        self.cache_1day.write().unwrap().clear_expired();
+        if let Some(weather) = self.cache_1day.read().unwrap().get(country_code, city, Period::For1Day.into()) {
+            return Ok(weather);
+        }
         let mut weathers: Vec<Result<Weather, Exception>> = self.sources
             .iter()
             .map(|wa| wa.daily_1day(city, country_code))
@@ -36,11 +57,19 @@ impl IWeatherService for WeatherService {
         weathers
             .into_iter()
             .fold(seed, |seed, current| add_weathers(seed, current))
+            .map(|w| {
+                self.cache_1day.write().unwrap().add(country_code, city, Period::For1Day.into(), w.clone());
+                w
+            })
     }
 
     fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception> {
         validate_city(city)?;
         validate_country_code(country_code)?;
+        self.cache_5day.write().unwrap().clear_expired();
+        if let Some(weather) = self.cache_5day.read().unwrap().get(country_code, city, Period::For5Day.into()) {
+            return Ok(weather);
+        }
         let mut weathers: Vec<Result<[Weather; 5], Exception>> = self.sources
             .iter()
             .map(|wa| wa.daily_5day(city, country_code))
@@ -51,6 +80,10 @@ impl IWeatherService for WeatherService {
         weathers
             .into_iter()
             .fold(seed, |seed, current| zip_weathers(seed, current))
+            .map(|w| {
+                self.cache_5day.write().unwrap().add(country_code, city, Period::For5Day.into(), w.clone());
+                w
+            })
     }
 }
 
@@ -90,11 +123,12 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
 #[cfg(test)]
 pub mod domain_tests {
     use super::WeatherService;
-    use std::sync::{Arc, Mutex};
+    use std::sync::{Arc, Mutex, RwLock};
     use std::collections::HashMap;
     use crate::domain_logic::IWeatherService;
-    use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter};
+    use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter};
     use crate::entities::Exception;
+    use std::time::Duration;
 
     #[test]
     pub fn datly_1day() -> Result<(), Exception> {
@@ -103,6 +137,8 @@ pub mod domain_tests {
                 Box::new(AccumaWeatherAdapter),
                 Box::new(OpenWeatherMapAdapter),
             ],
+            Arc::new(RwLock::new(CacheAdapter::new(Duration::new(60 * 60 * 24, 0)))),
+            Arc::new(RwLock::new(CacheAdapter::new(Duration::new(60 * 60 * 24, 0)))),
         );
         let forecast = service.daily_1day("test_city", "ru")?;
         assert!(forecast.temperature == 3.0, "{:?}", forecast);
@@ -116,6 +152,8 @@ pub mod domain_tests {
                 Box::new(AccumaWeatherAdapter),
                 Box::new(OpenWeatherMapAdapter),
             ],
+            Arc::new(RwLock::new(CacheAdapter::new(Duration::new(60 * 60 * 24, 0)))),
+            Arc::new(RwLock::new(CacheAdapter::new(Duration::new(60 * 60 * 24, 0)))),
         );
         let forecast = service.daily_5day("test_city", "ru")?;
         assert_eq!(5, forecast.len());
