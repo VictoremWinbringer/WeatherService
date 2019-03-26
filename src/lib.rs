@@ -4,12 +4,14 @@ extern crate serde_derive;
 extern crate serde_json;
 extern crate reqwest;
 extern crate arrayvec;
+extern crate regex;
 
 use actix_web::{http, server, App, Path, Responder, HttpResponse};
 
 mod entities;
 mod adapters;
 mod domain_logic;
+mod ports;
 
 fn weather(info: Path<(String, String, String)>) -> impl Responder {
 

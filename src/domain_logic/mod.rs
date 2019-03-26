@@ -100,12 +100,12 @@ pub mod domain_tests {
                                           ],
         );
         let forecast = service.daily_5day("test_city", "ru")?;
-       assert_eq!(5, forecast.len());
+        assert_eq!(5, forecast.len());
         let mut i = 1.5;
         let step = 1.5;
         for f in forecast.iter() {
-            assert_eq!(i,f.temperature);
-            i +=step;
+            assert_eq!(i, f.temperature);
+            i += step;
         }
         Ok(())
     }
