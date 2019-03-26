@@ -6,6 +6,7 @@ pub enum Exception {
     AccuWeatherForecastNotFound(String),
     RequestError(reqwest::Error),
     ErrorMessage(String),
+    RegexError(regex::Error)
 }
 
 impl std::error::Error for Exception {
@@ -30,7 +31,13 @@ impl std::convert::From<reqwest::Error> for Exception {
     }
 }
 
-#[derive(Debug)]
+impl std::convert::From<regex::Error> for Exception {
+    fn from(err: regex::Error) -> Self {
+        Exception::RegexError(err)
+    }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Weather {
   pub temperature: f32,
 }

@@ -11,21 +11,21 @@ pub trait IWeatherService {
 }
 
 pub struct WeatherService {
-    cache: Arc<Mutex<HashMap<String, Weather>>>,
     sources: Vec<Box<dyn IWeatherAdapter>>,
 }
 
 impl WeatherService {
     fn new(
-        cache: Arc<Mutex<HashMap<String, Weather>>>,
         sources: Vec<Box<dyn IWeatherAdapter>>,
     ) -> WeatherService {
-        WeatherService { cache, sources }
+        WeatherService { sources }
     }
 }
 
 impl IWeatherService for WeatherService {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception> {
+        validate_city(city)?;
+        validate_country_code(country_code)?;
         let mut weathers: Vec<Result<Weather, Exception>> = self.sources
             .iter()
             .map(|wa| wa.daily_1day(city, country_code))
@@ -39,6 +39,8 @@ impl IWeatherService for WeatherService {
     }
 
     fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception> {
+        validate_city(city)?;
+        validate_country_code(country_code)?;
         let mut weathers: Vec<Result<[Weather; 5], Exception>> = self.sources
             .iter()
             .map(|wa| wa.daily_5day(city, country_code))
@@ -69,6 +71,22 @@ fn zip_weathers(lhs: Result<[Weather; 5], Exception>, rhs: Result<[Weather; 5], 
     Ok(crate::adapters::from_vec(weathers))
 }
 
+fn validate_city(city: &str) -> Result<(), Exception> {
+    if city.trim().is_empty() {
+        return Err(Exception::ErrorMessage(format!("City name is empty {}!", city)));
+    }
+    Ok(())
+}
+
+fn validate_country_code(country_code: &str) -> Result<(), Exception> {
+    let rgx = regex::Regex::new("[a-zA-Z]{2}")?;
+
+    if !rgx.is_match(country_code) {
+        return Err(Exception::ErrorMessage(format!("Country code must by ISO 2 alphabet code like us or ru. Current code is {}!", country_code)));
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 pub mod domain_tests {
     use super::WeatherService;
@@ -80,11 +98,11 @@ pub mod domain_tests {
 
     #[test]
     pub fn datly_1day() -> Result<(), Exception> {
-        let service = WeatherService::new(Arc::new(Mutex::new(HashMap::new())),
-                                          vec![
-                                              Box::new(AccumaWeatherAdapter),
-                                              Box::new(OpenWeatherMapAdapter),
-                                          ],
+        let service = WeatherService::new(
+            vec![
+                Box::new(AccumaWeatherAdapter),
+                Box::new(OpenWeatherMapAdapter),
+            ],
         );
         let forecast = service.daily_1day("test_city", "ru")?;
         assert!(forecast.temperature == 3.0, "{:?}", forecast);
@@ -93,11 +111,11 @@ pub mod domain_tests {
 
     #[test]
     pub fn datly_5day() -> Result<(), Exception> {
-        let service = WeatherService::new(Arc::new(Mutex::new(HashMap::new())),
-                                          vec![
-                                              Box::new(AccumaWeatherAdapter),
-                                              Box::new(OpenWeatherMapAdapter),
-                                          ],
+        let service = WeatherService::new(
+            vec![
+                Box::new(AccumaWeatherAdapter),
+                Box::new(OpenWeatherMapAdapter),
+            ],
         );
         let forecast = service.daily_5day("test_city", "ru")?;
         assert_eq!(5, forecast.len());
