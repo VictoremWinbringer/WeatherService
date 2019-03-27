@@ -1,5 +1,4 @@
 use crate::entities::Exception;
-use reqwest::Response;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Forecast {

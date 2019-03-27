@@ -1,11 +1,7 @@
-use actix_web::{Responder, HttpResponse, HttpRequest, Path, FromRequest};
-use regex;
-use crate::entities::{Weather, Exception};
+use actix_web::{HttpResponse, HttpRequest, Path, FromRequest};
+use crate::entities::{Weather, Exception, Period};
 use crate::domain_logic::IWeatherService;
-use crate::domain_logic;
 use actix_web::dev::Handler;
-use std::time::Duration;
-use std::sync::Arc;
 
 pub trait IActixWebPort<T: IWeatherService> {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse;
@@ -17,6 +13,13 @@ pub struct ActixWebPort<T: IWeatherService> {
 
 impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse {
+        let period= match period {
+            "1day" => Period::For1Day,
+            "5day" => Period::For5Day,
+            _ => {
+                return HttpResponse::NotFound().content_type("text/html").body(format!("Not found period {}!", period))
+            }
+        };
         from_result(self.service.get_forecast(city, country_code, period.into()))
     }
 }

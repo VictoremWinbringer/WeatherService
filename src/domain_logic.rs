@@ -1,8 +1,6 @@
 use crate::entities::{Weather, Exception, Period};
-use std::sync::{Arc, Mutex, RwLock};
-use std::collections::HashMap;
-use crate::adapters::{IWeatherAdapter, AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter};
-use serde_json::error::ErrorCode::ExpectedColon;
+use std::sync::{Arc, RwLock};
+use crate::adapters::{IWeatherAdapter, CacheAdapter};
 use std::time::Duration;
 use std::thread;
 
@@ -26,7 +24,6 @@ impl WeatherService {
 
 impl IWeatherService for WeatherService {
     fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
-        validate_period(period)?;
         validate_city(city)?;
         validate_country_code(country_code)?;
         if let Some(weather) = self.cache.read().unwrap().get(country_code, city, period.into()) {
@@ -76,13 +73,6 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
     Ok(())
 }
 
-fn validate_period(period: Period) -> Result<(), Exception> {
-    match period {
-        Period::Unknown => Err(Exception::UnknownPeriod),
-        _ => Ok(()),
-    }
-}
-
 pub fn run_clear_cache_thread(duration: Duration, cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) {
     thread::spawn(move || {
         thread::sleep(duration);
@@ -93,10 +83,9 @@ pub fn run_clear_cache_thread(duration: Duration, cache: Arc<RwLock<CacheAdapter
 #[cfg(test)]
 pub mod domain_tests {
     use super::WeatherService;
-    use std::sync::{Arc, Mutex, RwLock};
-    use std::collections::HashMap;
+    use std::sync::{Arc, RwLock};
     use crate::domain_logic::IWeatherService;
-    use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter, IWeatherAdapter};
+    use crate::adapters::{CacheAdapter, IWeatherAdapter};
     use crate::entities::{Exception, Weather, Period};
     use std::time::Duration;
 
@@ -106,11 +95,10 @@ pub mod domain_tests {
     }
 
     impl IWeatherAdapter for TestWeatherAdapter {
-        fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
+        fn get_forecast(&self, _city: &str, _country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
             match period {
                 Period::For1Day => Ok(self.for_1day.clone()),
                 Period::For5Day => Ok(self.for_5day.clone()),
-                Period::Unknown => Ok(self.for_1day.clone()),
             }
         }
     }

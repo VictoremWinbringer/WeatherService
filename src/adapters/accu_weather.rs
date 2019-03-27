@@ -39,8 +39,7 @@ const API_ROOT: &'static str = "http://dataservice.accuweather.com";
 
 pub fn city(name: &str, country_code: &str) -> Result<Vec<City>, Exception> {
     let path = &format!("{}/locations/v1/cities/search?apikey={}&q={},{}", API_ROOT, API_KEY, name, country_code);
-    let result: Vec<City> = reqwest::get(path)?
-        .json()?;
+    let result: Vec<City> = super::try_parse( reqwest::get(path)?)?;
     Ok(result)
 }
 

@@ -1,7 +1,6 @@
 use reqwest;
 use weather_service;
 use std::thread;
-use actix_web::http::StatusCode;
 
 
 #[test]
@@ -10,7 +9,7 @@ fn get_weather_service_should_return_error_for_uncorrected_period() -> Result<()
         weather_service::run("127.0.0.1:8082");
     });
     let mut response = reqwest::get("http://127.0.0.1:8082/api/v1/weather/RU/test_city/sasdfa")?;
-    assert!(response.status() == 500, "{}", response.text()?);
+    assert!(response.status() == 404, "{}", response.text()?);
     Ok(())
 }
 

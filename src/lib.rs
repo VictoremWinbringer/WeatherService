@@ -5,17 +5,13 @@ extern crate serde_json;
 extern crate reqwest;
 extern crate regex;
 
-use actix_web::{http, server, App, Path, Responder, HttpResponse, HttpRequest, FromRequest};
-use crate::ports::{IActixWebPort, ActixWebPort};
-use std::rc::Rc;
-use crate::domain_logic::{WeatherService, IWeatherService};
+use actix_web::{http, server, App};
+use crate::ports::{ActixWebPort};
+use crate::domain_logic::{WeatherService};
 use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter};
 use std::sync::{RwLock, Arc};
 use crate::entities::Weather;
-use std::collections::HashMap;
 use std::time::Duration;
-use actix_web::dev::{Handler, PathConfig};
-use std::thread;
 
 mod entities;
 mod adapters;

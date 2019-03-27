@@ -7,7 +7,7 @@ pub enum Exception {
     RequestError(reqwest::Error),
     ErrorMessage(String),
     RegexError(regex::Error),
-    UnknownPeriod,
+    JsonError(String),
 }
 
 impl std::error::Error for Exception {
@@ -21,7 +21,8 @@ impl std::fmt::Display for Exception {
             Exception::AccuWeatherForecastNotFound( city_id ) => write!(f,"Wether forecast not found for city with id: {}", city_id),
             Exception::ErrorMessage( message ) => write!(f,"Error: {}", message),
             Exception::RequestError(err) => err.fmt(f),
-            Exception::UnknownPeriod => write!(f,"Unknown period!",),
+            Exception::JsonError(message) => write!(f,"Json Error: {}",message),
+            Exception::RegexError(err) => err.fmt(f),
             _ => write!(f, "{:#?}", self),
         }
     }
@@ -48,7 +49,6 @@ pub struct Weather {
 pub enum Period {
     For1Day,
     For5Day,
-    Unknown
 }
 
 impl From<Period> for &'static str {
@@ -56,17 +56,6 @@ impl From<Period> for &'static str {
         match period {
             Period::For1Day => "1day",
             Period::For5Day => "5day",
-            Period::Unknown => "Unknown"
-        }
-    }
-}
-
-impl From<&str> for Period {
-    fn from(period: &str) -> Self {
-        match period {
-           "1day" => Period::For1Day,
-           "5day" => Period::For5Day,
-                _ => Period::Unknown,
         }
     }
 }
