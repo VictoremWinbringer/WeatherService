@@ -24,6 +24,7 @@ impl WeatherService {
 
 impl IWeatherService for WeatherService {
     fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
+        validate_period(period)?;
         validate_city(city)?;
         validate_country_code(country_code)?;
         if let Some(weather) = self.cache.read().unwrap().get(country_code, city, period.into()) {
@@ -73,6 +74,13 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
     Ok(())
 }
 
+fn validate_period(period:Period) ->Result<(), Exception> {
+    match period {
+        Period::Unknown =>            Err(Exception::UnknownPeriod),
+        _  => Ok(()),
+    }
+}
+
 #[cfg(test)]
 pub mod domain_tests {
     use super::WeatherService;
@@ -93,6 +101,7 @@ pub mod domain_tests {
             match period {
                 Period::For1Day => Ok(self.for_1day.clone()),
                 Period::For5Day => Ok(self.for_5day.clone()),
+                Period::Unknown => Ok(self.for_1day.clone()),
             }
         }
     }

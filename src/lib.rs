@@ -3,7 +3,6 @@ extern crate actix_web;
 extern crate serde_derive;
 extern crate serde_json;
 extern crate reqwest;
-extern crate arrayvec;
 extern crate regex;
 
 use actix_web::{http, server, App, Path, Responder, HttpResponse, HttpRequest, FromRequest};
@@ -16,6 +15,7 @@ use crate::entities::Weather;
 use std::collections::HashMap;
 use std::time::Duration;
 use actix_web::dev::{Handler, PathConfig};
+use std::thread;
 
 mod entities;
 mod adapters;
@@ -25,15 +25,14 @@ mod ports;
 struct WeatherHandler(ActixWebPort<WeatherService>);
 
 impl WeatherHandler {
-    fn new(cache_1day: Arc<RwLock<CacheAdapter<Weather>>>, cache_5day: Arc<RwLock<CacheAdapter<[Weather; 5]>>>) -> Self {
+    fn new(cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) -> Self {
         WeatherHandler(ActixWebPort {
             service: WeatherService::new(
                 vec![
                     Box::new(AccumaWeatherAdapter),
                     Box::new(OpenWeatherMapAdapter),
                 ],
-                cache_1day,
-                cache_5day,
+                cache,
             )
         })
     }
@@ -56,18 +55,22 @@ impl<S> Handler<S> for WeatherHandler {
 
 pub fn run(addr: impl std::net::ToSocketAddrs) {
     let duration = Duration::new(60 * 60 * 24, 0);
-    let cache_1day: Arc<RwLock<CacheAdapter<Weather>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
-    let cache_5day: Arc<RwLock<CacheAdapter<[Weather; 5]>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
+    let cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
 
-    //TODO: Это надо делать в фоновом процессе с периодом равным времени жизни значения в кеше т.е. в данном случае раз в сутки
-    self.cache.write().unwrap().clear_expired();
+   let ch = cache.clone();
+   let dr = duration.clone();
+    thread::spawn(move ||{
+        thread::sleep(dr);
+        ch.write().unwrap().clear_expired();
+    });
+
+
     server::new(
         move || {
-            let cd1 = cache_1day.clone();
-            let cd5 = cache_5day.clone();
+            let cloned = cache.clone();
             App::new()
                 .prefix("/api/v1")
-                .resource("/weather/{country_code}/{city}/{period}", move |x| x.method(http::Method::GET).h(WeatherHandler::new(cd1, cd5)))
+                .resource("/weather/{country_code}/{city}/{period}", move |x| x.method(http::Method::GET).h(WeatherHandler::new(cloned)))
         })
         .bind(addr)
         .unwrap()

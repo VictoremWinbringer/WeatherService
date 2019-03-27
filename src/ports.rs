@@ -14,13 +14,7 @@ pub struct ActixWebPort<T: IWeatherService> {
 
 impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse {
-        match period {
-            "1day" => from_result(self.service.ge),
-            "5day" => from_result(self.service.daily_5day(city, country_code)),
-            _ => HttpResponse::NotFound()
-                .content_type("text/html")
-                .body(format!("Not found period {}!", period))
-        }
+        from_result(self.service.get_forecast(city,country_code,period.into()))
     }
 }
 
