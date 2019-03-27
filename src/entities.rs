@@ -42,7 +42,7 @@ pub struct Weather {
   pub temperature: f32,
 }
 
-
+#[derive(Debug, Copy, Clone)]
 pub enum Period {
     For1Day,
     For5Day,

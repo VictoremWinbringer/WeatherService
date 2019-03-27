@@ -44,7 +44,7 @@ impl IWeatherAdapter for AccumaWeatherAdapter {
 
     fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
         let city_id = accu_weather::city(city, country_code)?.first().ok_or(Exception::AccuWeatherCityNotFound(city.to_owned()))?.key.clone();
-        let forecast = match Period {
+        let forecast = match period {
             Period::For5Day => accu_weather::dayly_5day(&city_id)?,
             Period::For1Day => accu_weather::dayly_1day(&city_id)?,
         };
@@ -80,7 +80,7 @@ impl  OpenWeatherMapAdapter {
         Ok(Weather { temperature: forecast.main.temp })
     }
 
-    fn daily_5day(&self, city: &str, country_code: &str) -> Result<[Weather; 5], Exception> {
+    fn daily_5day(&self, city: &str, country_code: &str) -> Result<Vec<Weather>, Exception> {
 //        if city == "test_city" {
 //            let mut value: Vec<Weather> = Vec::new();
 //            for i in 1..6 {
@@ -105,7 +105,7 @@ impl  OpenWeatherMapAdapter {
                 }
                 acc
             });
-        Ok(from_vec(forecasts))
+        Ok(forecasts)
     }
 }
 
