@@ -24,19 +24,9 @@ impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
     }
 }
 
-fn from_single_result(result: Result<Weather, Exception>) -> HttpResponse {
+fn from_result(result: Result<Vec<Weather>, Exception>) -> HttpResponse {
     match result {
         Ok(weather) => HttpResponse::Ok().json(weather),
-        Err(e) => HttpResponse::InternalServerError()
-            .content_type("text/html")
-            .body(format!("Error: {}", e))
-    }
-}
-
-fn from_5day_result(result: Result<[Weather; 5], Exception>) -> HttpResponse {
-    match result {
-        Ok(weathers) =>
-            HttpResponse::Ok().json(weathers),
         Err(e) => HttpResponse::InternalServerError()
             .content_type("text/html")
             .body(format!("Error: {}", e))
