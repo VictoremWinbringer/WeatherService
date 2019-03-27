@@ -58,8 +58,6 @@ pub fn run(addr: impl std::net::ToSocketAddrs) {
     let duration = Duration::new(60 * 60 * 24, 0);
     let cache_1day: Arc<RwLock<CacheAdapter<Weather>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
     let cache_5day: Arc<RwLock<CacheAdapter<[Weather; 5]>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
-
-
     server::new(
         move || {
             let cd1 = cache_1day.clone();
