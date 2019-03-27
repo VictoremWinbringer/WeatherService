@@ -41,3 +41,18 @@ impl std::convert::From<regex::Error> for Exception {
 pub struct Weather {
   pub temperature: f32,
 }
+
+
+pub enum Period {
+    For1Day,
+    For5Day,
+}
+
+impl From<Period> for &'static str {
+    fn from(period: Period) -> Self {
+        match period {
+            Period::For1Day => "1day",
+            Period::For5Day => "5day",
+        }
+    }
+}

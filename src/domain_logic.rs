@@ -25,20 +25,6 @@ impl WeatherService {
     }
 }
 
-enum Period {
-    For1Day,
-    For5Day,
-}
-
-impl From<Period> for &'static str {
-    fn from(period: Period) -> Self {
-        match period {
-            Period::For1Day => "1day",
-            Period::For5Day => "5day",
-        }
-    }
-}
-
 impl IWeatherService for WeatherService {
     fn daily_1day(&self, city: &str, country_code: &str) -> Result<Weather, Exception> {
         validate_city(city)?;
