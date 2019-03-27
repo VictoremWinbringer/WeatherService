@@ -22,34 +22,15 @@ mod adapters;
 mod domain_logic;
 mod ports;
 
-struct WeatherHandler(ActixWebPort<WeatherService>);
-
-impl WeatherHandler {
-    fn new(cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) -> Self {
-        WeatherHandler(ActixWebPort {
-            service: WeatherService::new(
-                vec![
-                    Box::new(AccumaWeatherAdapter),
-                    Box::new(OpenWeatherMapAdapter),
-                ],
-                cache,
-            )
-        })
-    }
-}
-
-impl<S> Handler<S> for WeatherHandler {
-    type Result = HttpResponse;
-
-    /// Handle request
-    fn handle(&self, req: &HttpRequest<S>) -> Self::Result {
-        let info = Path::<(String, String, String)>::extract(req);
-        match info {
-            Ok(path) => self.0.get_weather(&path.0, &path.1, &path.2),
-            Err(e) => HttpResponse::BadRequest()
-                .content_type("text/html")
-                .body(format!("{}", e))
-        }
+fn weather_handler(cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) -> ActixWebPort<WeatherService> {
+    ActixWebPort {
+        service: WeatherService::new(
+            vec![
+                Box::new(AccumaWeatherAdapter),
+                Box::new(OpenWeatherMapAdapter),
+            ],
+            cache,
+        )
     }
 }
 
@@ -57,20 +38,14 @@ pub fn run(addr: impl std::net::ToSocketAddrs) {
     let duration = Duration::new(60 * 60 * 24, 0);
     let cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
 
-   let ch = cache.clone();
-   let dr = duration.clone();
-    thread::spawn(move ||{
-        thread::sleep(dr);
-        ch.write().unwrap().clear_expired();
-    });
-
+    domain_logic::run_clear_cache_thread(duration.clone(),cache.clone());
 
     server::new(
         move || {
             let cloned = cache.clone();
             App::new()
                 .prefix("/api/v1")
-                .resource("/weather/{country_code}/{city}/{period}", move |x| x.method(http::Method::GET).h(WeatherHandler::new(cloned)))
+                .resource("/weather/{country_code}/{city}/{period}", move |x| x.method(http::Method::GET).h(weather_handler(cloned)))
         })
         .bind(addr)
         .unwrap()

@@ -3,6 +3,8 @@ use std::sync::{Arc, Mutex, RwLock};
 use std::collections::HashMap;
 use crate::adapters::{IWeatherAdapter, AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter};
 use serde_json::error::ErrorCode::ExpectedColon;
+use std::time::Duration;
+use std::thread;
 
 pub trait IWeatherService {
     fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception>;
@@ -74,11 +76,18 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
     Ok(())
 }
 
-fn validate_period(period:Period) ->Result<(), Exception> {
+fn validate_period(period: Period) -> Result<(), Exception> {
     match period {
-        Period::Unknown =>            Err(Exception::UnknownPeriod),
-        _  => Ok(()),
+        Period::Unknown => Err(Exception::UnknownPeriod),
+        _ => Ok(()),
     }
+}
+
+pub fn run_clear_cache_thread(duration: Duration, cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) {
+    thread::spawn(move || {
+        thread::sleep(duration);
+        cache.write().unwrap().clear_expired();
+    });
 }
 
 #[cfg(test)]
