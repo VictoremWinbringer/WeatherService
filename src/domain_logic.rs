@@ -35,7 +35,7 @@ impl IWeatherService for WeatherService {
             .collect();
         let seed = weathers
             .pop()
-            .ok_or(Exception::ErrorMessage("Empty weathers in forecast".to_owned()))?;
+            .ok_or(Exception::OptionIsNone("Empty weathers in forecast".to_owned()))?;
         weathers
             .into_iter()
             .fold(seed, |seed, current| zip_weathers(seed, current))
@@ -59,7 +59,7 @@ fn zip_weathers(lhs: Result<Vec<Weather>, Exception>, rhs: Result<Vec<Weather>, 
 
 fn validate_city(city: &str) -> Result<(), Exception> {
     if city.trim().is_empty() {
-        return Err(Exception::ErrorMessage(format!("City name is empty {}!", city)));
+        return Err(Exception::NotValidCityName(format!("City name is empty {}!", city)));
     }
     Ok(())
 }
@@ -68,7 +68,7 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
     let rgx = regex::Regex::new("^[a-zA-Z]{2}$")?;
 
     if !rgx.is_match(country_code) {
-        return Err(Exception::ErrorMessage(format!("Country code must by ISO 2 alphabet code like us or ru. Current code is {}!", country_code)));
+        return Err(Exception::NotValidCountryCode(format!("Country code must by ISO 2 alphabet code like us or ru. Current code is {}!", country_code)));
     }
     Ok(())
 }

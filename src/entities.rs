@@ -5,9 +5,12 @@ pub enum Exception {
     AccuWeatherCityNotFound(String),
     AccuWeatherForecastNotFound(String),
     RequestError(reqwest::Error),
-    ErrorMessage(String),
+    ApiError(String),
     RegexError(regex::Error),
     JsonError(String),
+    NotValidCountryCode(String),
+    NotValidCityName(String),
+    OptionIsNone(String)
 }
 
 impl std::error::Error for Exception {
@@ -19,10 +22,12 @@ impl std::fmt::Display for Exception {
         match self {
             Exception::AccuWeatherCityNotFound( city ) => write!(f,"Wether forecast not found for city: {}", city),
             Exception::AccuWeatherForecastNotFound( city_id ) => write!(f,"Wether forecast not found for city with id: {}", city_id),
-            Exception::ErrorMessage( message ) => write!(f,"Error: {}", message),
+             Exception::OptionIsNone( message ) => write!(f,"Error: {}", message),
             Exception::RequestError(err) => err.fmt(f),
             Exception::JsonError(message) => write!(f,"Json Error: {}",message),
             Exception::RegexError(err) => err.fmt(f),
+            Exception::NotValidCountryCode(message) => write!(f,"Not valid country code: {}",message),
+            Exception::NotValidCityName(message) => write!(f,"Not valid city name: {}",message),
             _ => write!(f, "{:#?}", self),
         }
     }

@@ -113,9 +113,9 @@ fn try_parse<T: DeserializeOwned>(mut response: Response) -> Result<T, Exception
     if response.status() == 200 {
         match response.json() {
             Ok(weather) => Ok(weather),
-            _ => Err(Exception::ErrorMessage(response.text()?))
+            _ => Err(Exception::JsonError(response.text()?))
         }
     } else {
-        Err(Exception::JsonError(response.text()?))
+        Err(Exception::ApiError(format!("Status:{} Message:{}",response.status(),response.text()?)))
     }
 }
