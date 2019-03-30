@@ -4,6 +4,10 @@ extern crate serde_derive;
 extern crate serde_json;
 extern crate reqwest;
 extern crate regex;
+extern crate fern;
+#[macro_use]
+extern crate log;
+extern crate chrono;
 
 use actix_web::{http, server, App};
 use crate::ports::{ActixWebPort};
@@ -12,6 +16,7 @@ use crate::adapters::{AccumaWeatherAdapter, OpenWeatherMapAdapter, CacheAdapter}
 use std::sync::{RwLock, Arc};
 use crate::entities::Weather;
 use std::time::Duration;
+use std::io::Error;
 
 mod entities;
 mod adapters;
@@ -30,11 +35,29 @@ fn weather_handler(cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) -> ActixWebPo
     }
 }
 
-pub fn run(addr: impl std::net::ToSocketAddrs) {
+pub fn run(addr: impl std::net::ToSocketAddrs) -> Result<(),Box<dyn std::error::Error>> {
+    let file = fern::log_file("output.log")?;
+    fern::Dispatch::new()
+        .format(|out, message, record| {
+            out.finish(format_args!(
+                "{}[{}][{}] {}",
+                chrono::Local::now().format("[%Y-%m-%d][%H:%M:%S]"),
+                record.target(),
+                record.level(),
+                message
+            ))
+        })
+        .level(log::LevelFilter::Debug)
+        .chain(std::io::stdout())
+        .chain(file)
+        .apply()?;
+
     let duration = Duration::new(60 * 60 * 24, 0);
     let cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>> = Arc::new(RwLock::new(CacheAdapter::new(duration.clone())));
 
     domain_logic::run_clear_cache_thread(duration.clone(),cache.clone());
+
+    info!("Running weather service");
 
     server::new(
         move || {
@@ -45,5 +68,6 @@ pub fn run(addr: impl std::net::ToSocketAddrs) {
         })
         .bind(addr)
         .unwrap()
-        .run()
+        .run();
+    Ok(())
 }

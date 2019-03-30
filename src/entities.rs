@@ -10,24 +10,22 @@ pub enum Exception {
     JsonError(String),
     NotValidCountryCode(String),
     NotValidCityName(String),
-    OptionIsNone(String)
+    OptionIsNone(String),
 }
-
-impl std::error::Error for Exception {
-
-}
+//TODO: Use error type actix and parse it from this
+impl std::error::Error for Exception {}
 
 impl std::fmt::Display for Exception {
     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
         match self {
-            Exception::AccuWeatherCityNotFound( city ) => write!(f,"Wether forecast not found for city: {}", city),
-            Exception::AccuWeatherForecastNotFound( city_id ) => write!(f,"Wether forecast not found for city with id: {}", city_id),
-             Exception::OptionIsNone( message ) => write!(f,"Error: {}", message),
+            Exception::AccuWeatherCityNotFound(city) => write!(f, "Wether forecast not found for city: {}", city),
+            Exception::AccuWeatherForecastNotFound(city_id) => write!(f, "Wether forecast not found for city with id: {}", city_id),
+            Exception::OptionIsNone(message) => write!(f, "Error: {}", message),
             Exception::RequestError(err) => err.fmt(f),
-            Exception::JsonError(message) => write!(f,"Json Error: {}",message),
+            Exception::JsonError(message) => write!(f, "Json Error: {}", message),
             Exception::RegexError(err) => err.fmt(f),
-            Exception::NotValidCountryCode(message) => write!(f,"Not valid country code: {}",message),
-            Exception::NotValidCityName(message) => write!(f,"Not valid city name: {}",message),
+            Exception::NotValidCountryCode(message) => write!(f, "Not valid country code: {}", message),
+            Exception::NotValidCityName(message) => write!(f, "Not valid city name: {}", message),
             _ => write!(f, "{:#?}", self),
         }
     }
@@ -47,7 +45,7 @@ impl std::convert::From<regex::Error> for Exception {
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Weather {
-  pub temperature: f32,
+    pub temperature: f32,
 }
 
 #[derive(Debug, Copy, Clone)]
