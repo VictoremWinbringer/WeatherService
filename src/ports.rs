@@ -1,7 +1,7 @@
 use actix_web::{HttpResponse, HttpRequest, Path, FromRequest};
 use crate::entities::{Weather, Exception, Period};
 use crate::domain_logic::IWeatherService;
-use actix_web::dev::Handler;
+use actix_web::dev::{Handler, HttpResponseBuilder};
 
 pub trait IActixWebPort<T: IWeatherService> {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse;
@@ -17,6 +17,7 @@ impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
             "1day" => Period::For1Day,
             "5day" => Period::For5Day,
             _ => {
+                error!("Not found period:{}",period);
                 return HttpResponse::NotFound().content_type("text/html").body(format!("Not found period {}!", period))
             }
         };
@@ -27,10 +28,23 @@ impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
 fn from_result(result: Result<Vec<Weather>, Exception>) -> HttpResponse {
     match result {
         Ok(weather) => HttpResponse::Ok().json(weather),
-        Err(e) => HttpResponse::InternalServerError()
-            .content_type("text/html")
-            .body(format!("Error: {}", e))
+        Err(e) =>{
+            error!("{}",e);
+            match e {
+                Exception::NotValidCountryCode(message) => html_response(HttpResponse::BadRequest(),message),
+                Exception::NotValidCityName(message) => html_response(HttpResponse::BadRequest(),message),
+                Exception::AccuWeatherForecastNotFound(message) => html_response(HttpResponse::NotFound(), message),
+                Exception::AccuWeatherForecastNotFound(message) => html_response(HttpResponse::NotFound(), message),
+                _ => html_response(HttpResponse::InternalServerError(),"Please try later or write ticket to support".to_owned())
+            }
+        }
     }
+}
+
+fn html_response(mut builder: HttpResponseBuilder,text:String) -> HttpResponse {
+    builder
+        .content_type("text/html")
+        .body(text)
 }
 
 impl<S, T: 'static> Handler<S> for ActixWebPort<T> where T: IWeatherService {
