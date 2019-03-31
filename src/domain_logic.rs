@@ -5,7 +5,7 @@ use std::time::Duration;
 use std::thread;
 
 pub trait IWeatherService {
-    fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception>;
+    fn get_forecast(&self, city: &str, country_code: &str, period: &str) -> Result<Vec<Weather>, Exception>;
 }
 
 pub struct WeatherService {
@@ -23,9 +23,10 @@ impl WeatherService {
 }
 
 impl IWeatherService for WeatherService {
-    fn get_forecast(&self, city: &str, country_code: &str, period: Period) -> Result<Vec<Weather>, Exception> {
+    fn get_forecast(&self, city: &str, country_code: &str, period: &str) -> Result<Vec<Weather>, Exception> {
         validate_city(city)?;
         validate_country_code(country_code)?;
+        let period = parse_period(period)?;
         if let Some(weather) = self.cache.read().unwrap().get(country_code, city, period.into()) {
             return Ok(weather);
         }
@@ -71,6 +72,14 @@ fn validate_country_code(country_code: &str) -> Result<(), Exception> {
         return Err(Exception::NotValidCountryCode(format!("Country code must by ISO 2 alphabet code like us or ru. Current code is {}!", country_code)));
     }
     Ok(())
+}
+
+fn parse_period(period: &str) -> Result<Period, Exception> {
+    match period {
+        "1day" => Ok(Period::For1Day),
+        "5day" => Ok(Period::For5Day),
+        _ => Err(Exception::PeriodNotFound(format!("{}", period))),
+    }
 }
 
 pub fn run_clear_cache_thread(duration: Duration, cache: Arc<RwLock<CacheAdapter<Vec<Weather>>>>) {
@@ -134,7 +143,7 @@ pub mod domain_tests {
     #[test]
     pub fn datly_1day() -> Result<(), Exception> {
         let service = create_service();
-        let forecast = service.get_forecast("test_city", "ru", Period::For1Day)?;
+        let forecast = service.get_forecast("test_city", "ru", "1day")?;
         assert!(forecast.first().unwrap().temperature == 3.0, "{:?}", forecast);
         Ok(())
     }
@@ -142,7 +151,7 @@ pub mod domain_tests {
     #[test]
     pub fn datly_5day() -> Result<(), Exception> {
         let service = create_service();
-        let forecast = service.get_forecast("test_city", "ru", Period::For5Day)?;
+        let forecast = service.get_forecast("test_city", "ru", "5day")?;
         assert_eq!(5, forecast.len());
         let mut i = 1.5;
         let step = 1.5;

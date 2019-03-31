@@ -13,35 +13,27 @@ pub struct ActixWebPort<T: IWeatherService> {
 
 impl<T> IActixWebPort<T> for ActixWebPort<T> where T: IWeatherService {
     fn get_weather(&self, country_code: &str, city: &str, period: &str) -> HttpResponse {
-        let period= match period {
-            "1day" => Period::For1Day,
-            "5day" => Period::For5Day,
-            _ => {
-                error!("Not found period:{}",period);
-                return HttpResponse::NotFound().content_type("text/html").body(format!("Not found period {}!", period))
-            }
-        };
-        from_result(self.service.get_forecast(city, country_code, period.into()))
+        from_result(self.service.get_forecast(city, country_code, period))
     }
 }
 
 fn from_result(result: Result<Vec<Weather>, Exception>) -> HttpResponse {
     match result {
         Ok(weather) => HttpResponse::Ok().json(weather),
-        Err(e) =>{
-            error!("{}",e);
+        Err(e) => {
+            error!("{}", e);
             match e {
-                Exception::NotValidCountryCode(message) => html_response(HttpResponse::BadRequest(),message),
-                Exception::NotValidCityName(message) => html_response(HttpResponse::BadRequest(),message),
-                Exception::AccuWeatherForecastNotFound(message) => html_response(HttpResponse::NotFound(), message),
-                Exception::AccuWeatherForecastNotFound(message) => html_response(HttpResponse::NotFound(), message),
-                _ => html_response(HttpResponse::InternalServerError(),"Please try later or write ticket to support".to_owned())
+                Exception::NotValidCountryCode(message) => html_response(HttpResponse::BadRequest(), message),
+                Exception::NotValidCityName(message) => html_response(HttpResponse::BadRequest(), message),
+                Exception::AccuWeatherCityNotFound(message) => html_response(HttpResponse::BadRequest(), message),
+                Exception::PeriodNotFound(message) => html_response(HttpResponse::BadRequest(), message),
+                _ => html_response(HttpResponse::InternalServerError(), "Please try later or write ticket to support".to_owned())
             }
         }
     }
 }
 
-fn html_response(mut builder: HttpResponseBuilder,text:String) -> HttpResponse {
+fn html_response(mut builder: HttpResponseBuilder, text: String) -> HttpResponse {
     builder
         .content_type("text/html")
         .body(text)

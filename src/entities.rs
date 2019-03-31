@@ -3,7 +3,6 @@ use std::fmt::Formatter;
 #[derive(Debug)]
 pub enum Exception {
     AccuWeatherCityNotFound(String),
-    AccuWeatherForecastNotFound(String),
     RequestError(reqwest::Error),
     ApiError(String),
     RegexError(regex::Error),
@@ -11,7 +10,9 @@ pub enum Exception {
     NotValidCountryCode(String),
     NotValidCityName(String),
     OptionIsNone(String),
+    PeriodNotFound(String),
 }
+
 //TODO: Use error type actix and parse it from this
 impl std::error::Error for Exception {}
 
@@ -19,13 +20,13 @@ impl std::fmt::Display for Exception {
     fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
         match self {
             Exception::AccuWeatherCityNotFound(city) => write!(f, "Wether forecast not found for city: {}", city),
-            Exception::AccuWeatherForecastNotFound(city_id) => write!(f, "Wether forecast not found for city with id: {}", city_id),
             Exception::OptionIsNone(message) => write!(f, "Error: {}", message),
             Exception::RequestError(err) => err.fmt(f),
             Exception::JsonError(message) => write!(f, "Json Error: {}", message),
             Exception::RegexError(err) => err.fmt(f),
             Exception::NotValidCountryCode(message) => write!(f, "Not valid country code: {}", message),
             Exception::NotValidCityName(message) => write!(f, "Not valid city name: {}", message),
+            Exception::PeriodNotFound(message) => write!(f, "Not found period: {}", message),
             _ => write!(f, "{:#?}", self),
         }
     }

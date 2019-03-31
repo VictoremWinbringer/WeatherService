@@ -9,7 +9,7 @@ fn get_weather_service_should_return_error_for_uncorrected_period() -> Result<()
         weather_service::run("127.0.0.1:8082");
     });
     let mut response = reqwest::get("http://127.0.0.1:8082/api/v1/weather/RU/test_city/sasdfa")?;
-    assert!(response.status() == 404, "{}", response.text()?);
+    assert!(response.status() == 400, "{}", response.text()?);
     Ok(())
 }
 
@@ -19,7 +19,7 @@ fn get_weather_service_should_return_error_for_to_short_country_code() -> Result
         weather_service::run("127.0.0.1:8083");
     });
     let mut response = reqwest::get("http://127.0.0.1:8083/api/v1/weather/R/test_city/1day")?;
-    assert!(response.status() == 500, "{}", response.text()?);
+    assert!(response.status() == 400, "{}", response.text()?);
     Ok(())
 }
 
@@ -29,7 +29,7 @@ fn get_weather_service_should_return_error_for_to_long_country_code() -> Result<
         weather_service::run("127.0.0.1:8084");
     });
     let mut response = reqwest::get("http://127.0.0.1:8084/api/v1/weather/RUR/test_city/1day")?;
-    assert!(response.status() == 500, "{}", response.text()?);
+    assert!(response.status() == 400, "{}", response.text()?);
     Ok(())
 }
 
@@ -39,7 +39,7 @@ fn get_weather_service_should_return_error_for_invalid_chars_country_code() -> R
         weather_service::run("127.0.0.1:8085");
     });
     let mut response = reqwest::get("http://127.0.0.1:8085/api/v1/weather/Rш/test_city/1day")?;
-    assert!(response.status() == 500, "{}", response.text()?);
+    assert!(response.status() == 400, "{}", response.text()?);
     Ok(())
 }
 
@@ -49,7 +49,7 @@ fn get_weather_service_should_return_error_for_invalid_chars_city() -> Result<()
         weather_service::run("127.0.0.1:8086");
     });
     let mut response = reqwest::get("http://127.0.0.1:8086/api/v1/weather/ru/    /1day")?;
-    assert!(response.status() == 500, "{}", response.text()?);
+    assert!(response.status() == 400, "{}", response.text()?);
     Ok(())
 }
 

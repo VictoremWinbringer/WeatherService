@@ -143,3 +143,1290 @@
 [2019-03-31][10:33:21][tokio_reactor][DEBUG] dropping I/O source: 2
 [2019-03-31][10:33:21][tokio_reactor][DEBUG] dropping I/O source: 3
 [2019-03-31][10:33:21][tokio_reactor][DEBUG] dropping I/O source: 4
+[2019-03-31][11:09:59][weather_service][INFO] Running weather service
+[2019-03-31][11:09:59][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8083
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8084
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8085
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:09:59][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:09:59][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:09:59][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:09:59][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:09:59][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:09:59][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:09:59][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:09:59][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:09:59][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:09:59][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:09:59][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:10:00][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:10:00][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:10:00][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:00][weather_service][INFO] Running weather service
+[2019-03-31][11:11:00][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:11:00][actix_net::server::server][INFO] Starting server on 0.0.0.0:22222
+[2019-03-31][11:11:00][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:00][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:00][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:11:00][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:11:00][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:11:00][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:11:00][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:11:00][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:11:00][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:11:00][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:11:18][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:11:18][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:11:18][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:18][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:11:18][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:11:18][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:11:18][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:11:18][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:11:18][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:18][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:18][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:11:18][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:11:18][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:18][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:19][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] read 694 bytes
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:11:19][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:11:19][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0xA (10 bytes)
+[2019-03-31][11:11:19][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/1day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] read 435 bytes
+[2019-03-31][11:11:19][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x1A7 (423 bytes)
+[2019-03-31][11:11:19][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:11:19][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:19][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:11:19][hyper::client::connect::http][DEBUG] connecting to 82.196.7.246:80
+[2019-03-31][11:11:19][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:19][hyper::client::connect::http][DEBUG] connected to Some(V4(82.196.7.246:80))
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] flushed 198 bytes
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] read 775 bytes
+[2019-03-31][11:11:19][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:11:19][hyper::proto::h1::conn][DEBUG] incoming body is content-length (432 bytes)
+[2019-03-31][11:11:19][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:11:19][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/weather?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=1
+[2019-03-31][11:11:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:19][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:23][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:25][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:25][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:25][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:25][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:11:25][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:11:25][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:25][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:25][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:11:25][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:25][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:25][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:11:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:26][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:11:26][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:26][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1289 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:11:26][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0xA (10 bytes)
+[2019-03-31][11:11:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/5day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:11:26][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x248 (584 bytes)
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:26][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:11:26][hyper::client::connect::http][DEBUG] connecting to 37.139.1.159:80
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:11:26][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.1.159:80))
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] flushed 200 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body is content-length (13510 bytes)
+[2019-03-31][11:11:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/forecast?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=40
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 2896 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::io][DEBUG] read 5169 bytes
+[2019-03-31][11:11:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:26][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:29][weather_service::ports][ERROR] Not found period: 5dayrr
+[2019-03-31][11:11:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:30][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:11:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:11:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:00][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:00][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:00][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:00][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:12:00][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:12:00][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:00][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:12:00][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:12:00][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:00][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:00][hyper::proto::h1::io][DEBUG] flushed 198 bytes
+[2019-03-31][11:12:02][hyper::proto::h1::io][DEBUG] read 694 bytes
+[2019-03-31][11:12:02][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:12:02][hyper::proto::h1::conn][DEBUG] incoming body is content-length (22 bytes)
+[2019-03-31][11:12:02][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:12:02][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscowsss,ru
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:02][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:12:02][hyper::client::connect::http][DEBUG] connecting to 37.139.20.5:80
+[2019-03-31][11:12:02][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:12:02][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.20.5:80))
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][hyper::proto::h1::io][DEBUG] flushed 203 bytes
+[2019-03-31][11:12:02][hyper::proto::h1::io][DEBUG] read 394 bytes
+[2019-03-31][11:12:02][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:12:02][hyper::proto::h1::conn][DEBUG] incoming body is content-length (40 bytes)
+[2019-03-31][11:12:02][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:12:02][reqwest::async_impl::response][DEBUG] Response: '404 Not Found' for http://api.openweathermap.org/data/2.5/forecast?appid=55f8c734fd0830fcfcf21238f256df49&q=moscowsss,ru&units=metric&cnt=40
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:02][weather_service::ports][ERROR] ApiError(
+    "Status:404 Not Found Message:{\"cod\":\"404\",\"message\":\"city not found\"}"
+)
+[2019-03-31][11:12:02][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:02][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:05][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:07][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:17][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:17][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:17][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:17][weather_service::ports][ERROR] Not valid country code: Country code must by ISO 2 alphabet code like us or ru. Current code is rufff!
+[2019-03-31][11:12:17][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:12:17][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:17][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:12:22][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:12:22][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:16:52][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:16:52][actix_net::server::server][INFO] SIGINT received, exiting
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][actix_net::server::worker][INFO] Shutting down worker, 0 connections
+[2019-03-31][11:16:52][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:16:52][tokio_reactor][DEBUG] dropping I/O source: 1
+[2019-03-31][11:16:52][tokio_reactor][DEBUG] dropping I/O source: 2
+[2019-03-31][11:16:52][tokio_reactor][DEBUG] dropping I/O source: 3
+[2019-03-31][11:16:52][tokio_reactor][DEBUG] dropping I/O source: 4
+[2019-03-31][11:17:34][weather_service][INFO] Running weather service
+[2019-03-31][11:17:34][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8083
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8085
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8084
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8084))
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][hyper::proto::h1::io][DEBUG] flushed 137 bytes
+[2019-03-31][11:17:34][actix_net::server::server][INFO] Starting server on 127.0.0.1:8084
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:17:34][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:17:34][weather_service::ports][ERROR] Not valid country code: Country code must by ISO 2 alphabet code like us or ru. Current code is RUR!
+[2019-03-31][11:17:34][hyper::proto::h1::io][DEBUG] read 186 bytes
+[2019-03-31][11:17:34][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:17:34][hyper::proto::h1::conn][DEBUG] incoming body is content-length (76 bytes)
+[2019-03-31][11:17:34][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:34][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8084"
+[2019-03-31][11:17:34][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8084/api/v1/weather/RUR/test_city/1day
+[2019-03-31][11:17:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:17:35][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:17:35][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:17:35][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:18:29][weather_service][INFO] Running weather service
+[2019-03-31][11:18:29][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8088))
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] flushed 133 bytes
+[2019-03-31][11:18:29][actix_net::server::server][INFO] Starting server on 127.0.0.1:8088
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:18:29][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connecting to 34.232.220.27:80
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connected to Some(V4(34.232.220.27:80))
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 695 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:18:29][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0xA (10 bytes)
+[2019-03-31][11:18:29][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 427 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x19F (415 bytes)
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:18:29][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connecting to 34.232.220.27:80
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connected to Some(V4(34.232.220.27:80))
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 1265 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body is content-length (594 bytes)
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:18:29][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/5day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:18:29][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connecting to 37.139.1.159:80
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:18:29][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.1.159:80))
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] flushed 200 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body is content-length (13510 bytes)
+[2019-03-31][11:18:29][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/forecast?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=40
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 8192 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 4217 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] read 224 bytes
+[2019-03-31][11:18:29][hyper::proto::h1::io][DEBUG] parsed 4 headers
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body is content-length (92 bytes)
+[2019-03-31][11:18:29][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8088"
+[2019-03-31][11:18:29][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://127.0.0.1:8088/api/v1/weather/ru/moscow/5day
+[2019-03-31][11:18:29][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:18:29][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:18:29][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][weather_service][INFO] Running weather service
+[2019-03-31][11:44:03][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8084
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8083
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8085
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8088))
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:03][hyper::proto::h1::io][DEBUG] flushed 133 bytes
+[2019-03-31][11:44:03][actix_net::server::server][INFO] Starting server on 127.0.0.1:8088
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:44:03][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:44:03][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:44:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:04][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:44:04][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:04][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:44:04][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:44:04][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:04][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] read 1289 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:44:04][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0xA (10 bytes)
+[2019-03-31][11:44:04][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/5day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:44:04][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x248 (584 bytes)
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:44:04][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:04][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:44:04][hyper::client::connect::http][DEBUG] connecting to 37.139.20.5:80
+[2019-03-31][11:44:04][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:04][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.20.5:80))
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] flushed 200 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body is content-length (13514 bytes)
+[2019-03-31][11:44:04][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/forecast?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=40
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] read 8192 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::io][DEBUG] read 4221 bytes
+[2019-03-31][11:44:04][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:04][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:44:05][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:05][hyper::proto::h1::io][DEBUG] read 223 bytes
+[2019-03-31][11:44:05][hyper::proto::h1::io][DEBUG] parsed 4 headers
+[2019-03-31][11:44:05][hyper::proto::h1::conn][DEBUG] incoming body is content-length (91 bytes)
+[2019-03-31][11:44:05][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:44:05][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:05][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:05][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:05][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8088"
+[2019-03-31][11:44:05][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://127.0.0.1:8088/api/v1/weather/ru/moscow/5day
+[2019-03-31][11:44:05][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:05][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:05][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:44:05][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:12][weather_service][INFO] Running weather service
+[2019-03-31][11:44:12][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:44:12][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:44:12][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:44:12][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:44:12][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:44:12][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:44:12][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:44:12][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:44:12][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:44:12][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:44:12][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:44:12][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:44:12][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:45:33][weather_service][INFO] Running weather service
+[2019-03-31][11:45:33][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:45:33][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:45:33][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:45:33][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:45:33][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:45:33][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:45:33][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:45:33][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:45:33][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:45:33][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:45:33][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:45:33][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:45:33][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:11][weather_service][INFO] Running weather service
+[2019-03-31][11:46:11][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:46:11][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:11][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:46:11][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:46:11][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:46:11][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:46:11][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:46:11][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:46:11][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:46:11][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:46:11][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:11][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:46:11][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][weather_service][INFO] Running weather service
+[2019-03-31][11:46:31][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8085
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8084
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8083
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:46:31][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:46:31][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:46:31][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:46:31][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:46:31][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:46:31][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:46:31][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:46:31][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:46:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:46:31][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:46:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:47:34][weather_service][INFO] Running weather service
+[2019-03-31][11:47:34][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:47:34][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:47:34][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8082))
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][hyper::proto::h1::io][DEBUG] flushed 138 bytes
+[2019-03-31][11:47:34][actix_net::server::server][INFO] Starting server on 127.0.0.1:8082
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:47:34][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:47:34][weather_service::ports][ERROR] Not found period: sasdfa
+[2019-03-31][11:47:34][hyper::proto::h1::io][DEBUG] read 115 bytes
+[2019-03-31][11:47:34][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:47:34][hyper::proto::h1::conn][DEBUG] incoming body is content-length (6 bytes)
+[2019-03-31][11:47:34][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:34][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8082"
+[2019-03-31][11:47:34][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8082/api/v1/weather/RU/test_city/sasdfa
+[2019-03-31][11:47:34][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:35][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:47:35][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:47:35][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:47:41][weather_service][INFO] Running weather service
+[2019-03-31][11:47:41][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:47:41][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:47:41][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8082))
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][hyper::proto::h1::io][DEBUG] flushed 138 bytes
+[2019-03-31][11:47:41][actix_net::server::server][INFO] Starting server on 127.0.0.1:8082
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:47:41][weather_service::ports][ERROR] Not found period: sasdfa
+[2019-03-31][11:47:41][hyper::proto::h1::io][DEBUG] read 115 bytes
+[2019-03-31][11:47:41][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:47:41][hyper::proto::h1::conn][DEBUG] incoming body is content-length (6 bytes)
+[2019-03-31][11:47:41][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8082"
+[2019-03-31][11:47:41][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8082/api/v1/weather/RU/test_city/sasdfa
+[2019-03-31][11:47:41][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:47:41][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:47:41][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:48:19][weather_service][INFO] Running weather service
+[2019-03-31][11:48:19][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:48:19][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8082
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:48:19][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8082))
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][hyper::proto::h1::io][DEBUG] flushed 138 bytes
+[2019-03-31][11:48:19][actix_net::server::server][INFO] Starting server on 127.0.0.1:8082
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:48:19][weather_service::ports][ERROR] Not found period: sasdfa
+[2019-03-31][11:48:19][hyper::proto::h1::io][DEBUG] read 115 bytes
+[2019-03-31][11:48:19][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:48:19][hyper::proto::h1::conn][DEBUG] incoming body is content-length (6 bytes)
+[2019-03-31][11:48:19][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8082"
+[2019-03-31][11:48:19][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8082/api/v1/weather/RU/test_city/sasdfa
+[2019-03-31][11:48:19][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:48:19][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:48:19][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:48:58][weather_service][INFO] Running weather service
+[2019-03-31][11:48:58][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:48:58][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8083
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:48:58][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8083))
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][hyper::proto::h1::io][DEBUG] flushed 135 bytes
+[2019-03-31][11:48:58][actix_net::server::server][INFO] Starting server on 127.0.0.1:8083
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:48:58][weather_service::ports][ERROR] Not valid country code: Country code must by ISO 2 alphabet code like us or ru. Current code is R!
+[2019-03-31][11:48:58][hyper::proto::h1::io][DEBUG] read 184 bytes
+[2019-03-31][11:48:58][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:48:58][hyper::proto::h1::conn][DEBUG] incoming body is content-length (74 bytes)
+[2019-03-31][11:48:58][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8083"
+[2019-03-31][11:48:58][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8083/api/v1/weather/R/test_city/1day
+[2019-03-31][11:48:58][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:48:58][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:48:58][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:03][weather_service][INFO] Running weather service
+[2019-03-31][11:49:03][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:03][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8084
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:03][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8084))
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][hyper::proto::h1::io][DEBUG] flushed 137 bytes
+[2019-03-31][11:49:03][actix_net::server::server][INFO] Starting server on 127.0.0.1:8084
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:03][weather_service::ports][ERROR] Not valid country code: Country code must by ISO 2 alphabet code like us or ru. Current code is RUR!
+[2019-03-31][11:49:03][hyper::proto::h1::io][DEBUG] read 186 bytes
+[2019-03-31][11:49:03][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:49:03][hyper::proto::h1::conn][DEBUG] incoming body is content-length (76 bytes)
+[2019-03-31][11:49:03][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8084"
+[2019-03-31][11:49:03][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8084/api/v1/weather/RUR/test_city/1day
+[2019-03-31][11:49:03][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:03][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:03][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:10][weather_service][INFO] Running weather service
+[2019-03-31][11:49:10][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:10][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8085
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:10][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8085))
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][hyper::proto::h1::io][DEBUG] flushed 141 bytes
+[2019-03-31][11:49:10][actix_net::server::server][INFO] Starting server on 127.0.0.1:8085
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:10][weather_service::ports][ERROR] Not valid country code: Country code must by ISO 2 alphabet code like us or ru. Current code is Rш!
+[2019-03-31][11:49:10][hyper::proto::h1::io][DEBUG] read 186 bytes
+[2019-03-31][11:49:10][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:49:10][hyper::proto::h1::conn][DEBUG] incoming body is content-length (76 bytes)
+[2019-03-31][11:49:10][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8085"
+[2019-03-31][11:49:10][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8085/api/v1/weather/R%D1%88/test_city/1day
+[2019-03-31][11:49:10][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:10][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:10][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:16][weather_service][INFO] Running weather service
+[2019-03-31][11:49:16][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:16][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8086
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:16][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8086))
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][hyper::proto::h1::io][DEBUG] flushed 139 bytes
+[2019-03-31][11:49:16][actix_net::server::server][INFO] Starting server on 127.0.0.1:8086
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:16][weather_service::ports][ERROR] Not valid city name: City name is empty     !
+[2019-03-31][11:49:16][hyper::proto::h1::io][DEBUG] read 134 bytes
+[2019-03-31][11:49:16][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:49:16][hyper::proto::h1::conn][DEBUG] incoming body is content-length (24 bytes)
+[2019-03-31][11:49:16][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8086"
+[2019-03-31][11:49:16][reqwest::async_impl::response][DEBUG] Response: '400 Bad Request' for http://127.0.0.1:8086/api/v1/weather/ru/%20%20%20%20/1day
+[2019-03-31][11:49:16][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:16][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:16][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:24][weather_service][INFO] Running weather service
+[2019-03-31][11:49:24][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:24][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8087))
+[2019-03-31][11:49:24][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:24][hyper::proto::h1::io][DEBUG] flushed 133 bytes
+[2019-03-31][11:49:24][actix_net::server::server][INFO] Starting server on 127.0.0.1:8087
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:24][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:24][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:24][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:25][hyper::client::connect::http][DEBUG] connecting to 34.232.220.27:80
+[2019-03-31][11:49:25][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:25][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:26][hyper::client::connect::http][DEBUG] connected to Some(V4(34.232.220.27:80))
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:49:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:26][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:26][hyper::client::connect::http][DEBUG] connecting to 54.236.93.168:80
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:26][hyper::client::connect::http][DEBUG] connected to Some(V4(54.236.93.168:80))
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] read 1110 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:49:26][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x1A9 (425 bytes)
+[2019-03-31][11:49:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/1day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] read 18 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x8 (8 bytes)
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:26][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:49:26][hyper::client::connect::http][DEBUG] connecting to 82.196.7.246:80
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:26][hyper::client::connect::http][DEBUG] connected to Some(V4(82.196.7.246:80))
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] flushed 198 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] read 775 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body is content-length (432 bytes)
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:49:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/weather?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=1
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] read 131 bytes
+[2019-03-31][11:49:26][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body is content-length (23 bytes)
+[2019-03-31][11:49:26][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8087"
+[2019-03-31][11:49:26][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://127.0.0.1:8087/api/v1/weather/ru/moscow/1day
+[2019-03-31][11:49:26][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:26][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:26][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:31][weather_service][INFO] Running weather service
+[2019-03-31][11:49:31][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8087
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8087))
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] flushed 133 bytes
+[2019-03-31][11:49:31][actix_net::server::server][INFO] Starting server on 127.0.0.1:8087
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:31][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:49:31][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:31][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] read 1128 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body is chunked encoding
+[2019-03-31][11:49:31][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0xA (10 bytes)
+[2019-03-31][11:49:31][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/1day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:49:31][hyper::proto::h1::decode][DEBUG] incoming chunked header: 0x1A7 (423 bytes)
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:31][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connecting to 37.139.20.5:80
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:31][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.20.5:80))
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] flushed 198 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] read 775 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body is content-length (432 bytes)
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:49:31][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/weather?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=1
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] read 129 bytes
+[2019-03-31][11:49:31][hyper::proto::h1::io][DEBUG] parsed 3 headers
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body is content-length (21 bytes)
+[2019-03-31][11:49:31][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8087"
+[2019-03-31][11:49:31][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://127.0.0.1:8087/api/v1/weather/ru/moscow/1day
+[2019-03-31][11:49:31][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:31][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:31][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:37][weather_service][INFO] Running weather service
+[2019-03-31][11:49:37][actix_net::server::server][INFO] Starting 12 workers
+[2019-03-31][11:49:37][hyper::client::connect::http][DEBUG] connecting to 127.0.0.1:8088
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:37][hyper::client::connect::http][DEBUG] connected to Some(V4(127.0.0.1:8088))
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:37][hyper::proto::h1::io][DEBUG] flushed 133 bytes
+[2019-03-31][11:49:37][actix_net::server::server][INFO] Starting server on 127.0.0.1:8088
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 4194305
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 1
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 8388610
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 2
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 12582915
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 3
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 16777220
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Read for: 4
+[2019-03-31][11:49:37][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:37][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:49:37][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:37][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:38][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] flushed 195 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 1098 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body is content-length (425 bytes)
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:49:38][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/locations/v1/cities/search?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&q=moscow,ru
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:38][hyper::client::connect::dns][DEBUG] resolving host="dataservice.accuweather.com"
+[2019-03-31][11:49:38][hyper::client::connect::http][DEBUG] connecting to 52.0.88.90:80
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:38][hyper::client::connect::http][DEBUG] connected to Some(V4(52.0.88.90:80))
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] flushed 199 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 1265 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] parsed 21 headers
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body is content-length (594 bytes)
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::client::pool][DEBUG] pooling idle connection for "http://dataservice.accuweather.com"
+[2019-03-31][11:49:38][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://dataservice.accuweather.com/forecasts/v1/daily/5day/294021?apikey=C6QDCUZmXMBAho8pi6PFXUmiDeE9AFWV&metric=true
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:38][hyper::client::connect::dns][DEBUG] resolving host="api.openweathermap.org"
+[2019-03-31][11:49:38][hyper::client::connect::http][DEBUG] connecting to 37.139.1.159:80
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] adding I/O source: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Write for: 0
+[2019-03-31][11:49:38][hyper::client::connect::http][DEBUG] connected to Some(V4(37.139.1.159:80))
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] flushed 200 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 1448 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] parsed 9 headers
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body is content-length (13514 bytes)
+[2019-03-31][11:49:38][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://api.openweathermap.org/data/2.5/forecast?appid=55f8c734fd0830fcfcf21238f256df49&q=moscow,ru&units=metric&cnt=40
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 8192 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 4221 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::client::pool][DEBUG] pooling idle connection for "http://api.openweathermap.org"
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] read 223 bytes
+[2019-03-31][11:49:38][hyper::proto::h1::io][DEBUG] parsed 4 headers
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body is content-length (91 bytes)
+[2019-03-31][11:49:38][hyper::proto::h1::conn][DEBUG] incoming body completed
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][hyper::client::pool][DEBUG] pooling idle connection for "http://127.0.0.1:8088"
+[2019-03-31][11:49:38][reqwest::async_impl::response][DEBUG] Response: '200 OK' for http://127.0.0.1:8088/api/v1/weather/ru/moscow/5day
+[2019-03-31][11:49:38][tokio_reactor::registration][DEBUG] scheduling Read for: 0
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] dropping I/O source: 0
+[2019-03-31][11:49:38][actix_web::server::h1][DEBUG] Error sending data: disconnected
+[2019-03-31][11:49:38][tokio_reactor][DEBUG] dropping I/O source: 0
